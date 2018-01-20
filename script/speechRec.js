@@ -1,8 +1,5 @@
-<script>
 var final_transcript = '';
 var recognizing = false;
-var ignore_onend;
-var start_timestamp;
 
 if (!('webkitSpeechRecognition' in window)) {
   window.alert("Speech recognition not available for your browser")
@@ -10,25 +7,15 @@ if (!('webkitSpeechRecognition' in window)) {
 else {
   var recognition = new webkitSpeechRecognition();
   recognition.continuous = false;
-
   recognition.onstart = function() {
     recognizing = true;
   };
-
   recognition.onerror = function(event) {
-      ignore_onend = true;
+    console.log("Error in recognition");
   };
-
   recognition.onend = function() {
     recognizing = false;
-    if (ignore_onend) {
-      return;
-    }
-    if (!final_transcript) {
-      return;
-    }
   };
-
   recognition.onresult = function(event) {
     if (typeof(event.results) == 'undefined') {
       recognition.onend = null;
@@ -49,8 +36,4 @@ function startButton(event) {
   }
   final_transcript = '';
   recognition.start();
-  ignore_onend = false;
-  final_span.innerHTML = '';
-  start_timestamp = event.timeStamp;
 }
-</script>
