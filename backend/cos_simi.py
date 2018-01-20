@@ -1,5 +1,6 @@
 import re, math
 from collections import Counter
+import random
 
 WORD = re.compile(r'\w+')
 
