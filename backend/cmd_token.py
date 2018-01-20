@@ -35,7 +35,7 @@ def string_to_num(number):
 key_words = ["length","color","coord"]
 
 
-print(return_value_delete("Delete cube1")_
+print(return_value_delete("Delete cube1")
 print(return_value("Update cube one length 10 color red coord 25.5"))
 
 
