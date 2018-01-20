@@ -1,2 +1,2 @@
-# vr_content_editor
+# vrcore
 A framework that enables content creators to easily make VR experiences.
