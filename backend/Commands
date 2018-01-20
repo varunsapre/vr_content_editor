@@ -1,0 +1,9 @@
+Load the "image" = <a-sky src="puydesancy.jpg" rotation="0 -130 0"></a-sky>
+
+Write a "text" = <a-text font="kelsonsans" value="Puy de Sancy, France" width="6" position="-2.5 0.25 -1.5" rotation="0 15 0"></a-text>
+
+Draw a cube = <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9" shadow="" material="" geometry=""></a-box>
+
+Draw a sphere = <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E" shadow="" material="" geometry=""></a-sphere>
+
+Draw a cylinder = <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D" shadow="" material="" geometry=""></a-cylinder>
