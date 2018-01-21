@@ -1,7 +1,8 @@
 function remover(){
-	$("#img_selector").fadeTo('slow',0);
+	$("#img_selector").fadeTo('slow',0).hide();
 	$(".editor").css("width",0);
 	$("#reopen").fadeTo('slow',1)
+
 	$("#reopen").click(function(){
 		$(".editor").css("width",'100vw');
 		$("#img_selector").fadeTo('slow',1);
@@ -35,7 +36,7 @@ function update(s, new_file = false) {
 		imgsrc = "../media/bg/"+s+".jpg"
 	}
   xhrimg = new XMLHttpRequest()
-	xhrimg.open("GET","https://localhost:5000/imgPath?n=" + imgsrc)
+	xhrimg.open("GET","http://localhost:5000/imgPath?n=" + imgsrc)
 	xhrimg.send()
 	console.log("in update")
 	var code = "<a-camera universal-controls position='0 1.6 0'><a-cursor></a-cursor></a-camera><a-sky src='"+imgsrc+"' rotation='0 -130 0'></a-sky>";

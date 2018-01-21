@@ -62,7 +62,7 @@ def process(cmd,coord,pathVar):
 		with open('data.pkl', 'rb') as pickle_file:
 			store = pickle.load(pickle_file)
 		pickle_file.close()
-	
+
 		del store[shape_name]
 
 		output = open('data.pkl', 'wb')
@@ -76,8 +76,8 @@ def process(cmd,coord,pathVar):
 		#print(keys)
 	#print(string)
 
-	header = '<a-scene class="fullscreen" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui=""><canvas class="a-canvas" data-aframe-canvas="true" width="300" height="150"></canvas><a-camera universal-controls wasd-controls><a-cursor></a-cursor></a-camera>'
-	footer = '<a-sky src = "' + pathVar + '" ></a-sky></a-scene>'
+	header = '<canvas class="a-canvas" data-aframe-canvas="true" width="300" height="150"></canvas><a-camera universal-controls wasd-controls><a-cursor></a-cursor></a-camera>'
+	footer = '<a-sky src = "' + pathVar + '" ></a-sky>'
 
 	body = header + string + footer
 	#print(body)

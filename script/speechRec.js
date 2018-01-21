@@ -27,7 +27,7 @@ else {
     }
     console.log(final_transcript);
     show_cmd(final_transcript);
-    compile(final_transcript);
+    compile("insert cube one");
   };
 
 }
