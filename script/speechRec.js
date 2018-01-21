@@ -26,9 +26,11 @@ else {
         final_transcript += event.results[i][0].transcript;
     }
     console.log(final_transcript);
+    show_cmd(final_transcript);
+    compile("insert cube one");
   };
-}
 
+}
 function startButton(event) {
   if (recognizing) {
     recognition.stop();

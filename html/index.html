@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="../styles/style.css"/>
+    <title>Web speech</title>
+  </head>
+  <script type="text/javascript" src="../script/speechRec.js"> </script>
+  <script src="../script/toolbar.js"></script>
+  <script src="../script/compile.js"></script>
+  <script src="../script/jquery-3.3.1.min.js"></script>
+  <script src="../script/aframe.min.js"></script>
+
+<body id="main-body" onload="$('.command').hide()">
+  <div class="command">
+    <p id = "command_text"></p>
+  </div>
+  <div class="everything">
+			<div class="vr">
+				<canvas id="content">
+          <!-- <a-sky src="../media/5.jpg" rotation="0 -130 0"></a-sky> -->
+				</canvas>
+			</div>
+
+			<div class="editor" id="editor">
+        <div id="img_selector">
+          <ul>
+            <li id="img1">
+                <img onclick="update(1)" src="../media/bg/1.jpg"/>
+            </li>
+            <li id="img2">
+                <img onclick="update(2)" src="../media/bg/2.jpg"/>
+            </li>
+            <li id="img3">
+                <img onclick="update(3)" src="../media/bg/3.jpg"/>
+            </li>
+            <li id="img4">
+                <img onclick="update(4)" src="../media/bg/4.jpg"/>
+            </li>
+            <li id="img5">
+                <img onclick="update(5)" src="../media/bg/5.jpg"/>
+            </li>
+            <li id="img6">
+                <img onclick="update(6)" src="../media/bg/6.jpg"/>
+            </li>
+          </ul>
+        </div>
+        <div id="buttons_bar">
+          <ul>
+            <li>
+                <img id="reopen" src="../media/reopen_white.png"/>
+            </li>
+            <li>
+              <input type="file" onchange="selectFile()" id="file-input" style="display:none">
+                <img id="customImg" onclick="openCustom()"  src="../media/open_white.png"/>
+              </input>
+            </li>
+            <li>
+                <img onclick="startButton(event)" id="speech" src="../media/mic_white.png"/>
+            </li>
+            <li>
+                <img id="tick" src="../media/tick_white.png"/>
+            </li>
+          </ul>
+        </div>
+			</div>
+		</div>
+</html>
