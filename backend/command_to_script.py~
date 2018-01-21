@@ -27,7 +27,7 @@ if len(glob.glob("*.pkl")) != 0:
 
 #cmd = "Insert cube one color red"
 #cmd = "Insert sphere one color red radius 20"
-cmd = "Insert cylinder two"
+cmd = "Insert cylinder one color red radius 20 height 6"
 #cmd = "Delete sphere one"
 
 
