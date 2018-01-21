@@ -1,3 +1,5 @@
+Load the "image" = <a-sky src="puydesancy.jpg" rotation="0 -130 0"></a-sky>
+
 Write a "text" = <a-text font="kelsonsans" value="Puy de Sancy, France" width="6" position="-2.5 0.25 -1.5" rotation="0 15 0"></a-text>
 
 Draw a cube = <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9" shadow="" material="" geometry=""></a-box>
@@ -14,5 +16,4 @@ update sphere radius "value"
 
 insert cube length "value"
 
-{'cube': [['length', '100'], ['color', 'red']]}
 
