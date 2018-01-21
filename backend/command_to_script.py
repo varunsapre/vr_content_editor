@@ -2,34 +2,16 @@ import pickle
 import glob
 from cmd_token import *
 
-header = '<html xmlns=" .... "><head> \n\
-<meta charset="utf-8" /> \n\
-<title>Command to Script Generator</title> \n\
-<meta name="Generator" content="Script" /> \n\
-<script src=" .... "></script> \n\
-<link rel="stylesheet" href=" .... " media="all" /></head> \n\
-<body class="a-body "> \n\
-<a-scene class="fullscreen" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui=""> \n'
-
-#print(cmd_code['Draw a sphere'])
-
 store = {}
 if len(glob.glob("*.pkl")) != 0:
 	with open('data.pkl', 'rb') as pickle_file:
 		store = pickle.load(pickle_file)
 	pickle_file.close()
 
-
-
-#body = input()
-#print(cmd_code[body])
-
-
 #cmd = "Insert cube one color red"
 #cmd = "Insert sphere one color red radius 20"
 cmd = "Insert cylinder two"
 #cmd = "Delete sphere one"
-
 
 if cmd.split()[0].lower() == "insert":
 	dicto = return_value(cmd)
@@ -93,9 +75,3 @@ for keys in store:
 	#print(keys)
 
 print(body)
-
-footer = '</a-scene></body></html>\n'
-
-script = header + body + footer
-with open("script.txt", "w") as text_file:
-    text_file.write(script)
