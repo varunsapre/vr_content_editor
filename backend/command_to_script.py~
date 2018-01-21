@@ -124,6 +124,6 @@ def process(cmd,coord,pathVar):
 	return body
 
 
-process("Insert sphere one color red radius 5",[1,1,1],"1.jpg")
-process("Insert cylinder one color red radius 5 height 3",[1,1,1],"1.jpg")
-#process("Update sphere one radius 2",[1,1,1],"1.jpg")
+#process("Insert sphere one color red radius 5",[1,1,1],"1.jpg")
+#process("Insert cylinder one color red radius 5 height 3",[1,1,1],"1.jpg")
+process("Update sphere one radius 2",[1,1,1],"1.jpg")
