@@ -80,8 +80,8 @@ def process(cmd,coord,pathVar):
 	footer = '<a-sky src = "' + pathVar + '" ></a-sky></a-scene>'
 
 	body = header + string + footer
-	#print(body)
-	return body
 
+	#return body
+	print(body)
 
-#process("Insert cube three color red",[1,1,1],"1.jpg")
+process("Insert cube three color red",[1,1,1],"1.jpg")

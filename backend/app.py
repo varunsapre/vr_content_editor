@@ -1,0 +1,23 @@
+from flask import Flask,render_template,json, request,redirect,url_for, jsonify
+from command_to_script import *
+
+app = Flask(__name__)
+
+@app.route("/compile",methods=["GET"])
+def compile():
+	q = request.args.get('q')
+	x = request.args.get('x')
+	y = request.args.get('y')
+	z = request.args.get('z')
+	
+	body = process(q,[x,y,z],pathVar)
+	return body
+
+@app.route("/imgPath",methods=["GET"])
+def path():
+	n = request.args.get('n')
+	global pathVar
+	pathVar = n
+
+if __name__ == "__main__":
+	app.run(debug=True,threaded=True)
