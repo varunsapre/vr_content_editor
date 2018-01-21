@@ -1,0 +1,6 @@
+(dp0
+Vcube1
+p1
+S'<a-box position="4 3 0" rotation="0 45 0"color = "black"shadow="" click-drag></a-box>'
+p2
+s.

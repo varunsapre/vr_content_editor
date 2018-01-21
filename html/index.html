@@ -9,7 +9,10 @@
   <script src="../script/compile.js"></script>
   <script src="../script/jquery-3.3.1.min.js"></script>
   <script src="../script/aframe.min.js"></script>
-
+  <script src="aframe-click-drag-component.min.js"></script> 
+  <script>
+  registerAframeClickDragComponent(window.AFRAME);
+  </script>
 <body id="main-body" onload="$('.command').hide()">
   <div class="command">
     <p id = "command_text"></p>

@@ -1,0 +1,51 @@
+<script src="https://aframe.io/releases/0.3.0/aframe.min.js"></script>
+<script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v2.5.2/dist/aframe-extras.js"></script>
+  <script src="aframe-click-drag-component.min.js"></script> 
+
+<!DOCTYPE html>  
+<html>  
+<head>
+<title>sphere position</title>
+<script>
+  registerAframeClickDragComponent(window.AFRAME);
+  function foo()
+  {
+    var camera = document.querySelector("a-camera");
+    var cursor = document.querySelector("a-cursor");
+    var camera_pos = new THREE.Vector3().copy(camera.object3D.getWorldPosition()); // get camera's world position
+    var cursor_pos = new THREE.Vector3().copy(cursor.object3D.getWorldPosition()); // get cursor's world position
+    var direction = new THREE.Vector3().subVectors(cursor_pos,camera_pos); //calculate direction from camera to cursor
+    var raycaster = new THREE.Raycaster(camera_pos,direction.normalize()); // make raycaster 
+    var sky = document.querySelector("a-sky");
+    var intersects = raycaster.intersectObject(sky.object3D.children[0]); //let raycaster intersect the 'a-sky' sphere
+    console.log(intersects[0].point); 
+    //console.log(intersects)
+    //console.log(cursor_pos)
+    //console.log(camera_pos)
+    //console.log(direction)
+  }
+  
+  AFRAME.registerComponent('listener', {
+  tick: function () {
+    console.log(this.el.getAttribute('position'));
+  }
+});
+
+    function foo1(){
+    console.log(document.getElementById("c").getAttribute("position"))
+//    console.log(e.detail.intersection)
+    }
+  setInterval(foo, 1000)
+
+  </script>
+</head>
+<body>
+<a-scene>
+  <a-camera>
+    <a-cursor id="c"></a-cursor>
+  </a-camera>
+  <a-sky src="1.jpg" material="side:double"></a-sky>  
+  <a-box click-drag position="5 0 0" color="white"></a-box>
+</a-scene>
+</body>
+</html>
