@@ -1,6 +1,10 @@
 (dp0
-Vcube1
+Vcube2
 p1
-S'<a-box position="4 3 0" rotation="0 45 0"color = "black"shadow="" click-drag></a-box>'
+S'<a-box position="4 0 2" rotation="0 45 0"color = "black"shadow="" click-drag></a-box>'
 p2
+sVcylinder1
+p3
+S'<a-cylinder position="3 0 5"color = "black"radius = "0.5"height = "1.5"shadow="" click-drag></a-cylinder>'
+p4
 s.
