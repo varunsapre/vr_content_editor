@@ -8,17 +8,37 @@ function remover(){
 		$("#reopen").fadeTo('slow',0)
 	})
 }
-
+function openCustom(){
+	var elem = document.getElementById("file-input")
+  elem.click()
+//	$('#file-input').change(function () {
+//  	var newImg = $('#file-input').files[0].name()
+//		console.log(newImg)
+//	}).click()
+}
+function selectFile(){
+	var elem = document.getElementById("file-input")
+	console.log(elem.files[0].name)
+  update(elem.files[0].name, true)
+}
 function show_cmd(s){
 	$('.command').html(s)
 	$(".command").fadeTo("slow",1).delay(1500).fadeTo("slow", 0)
 }
-function update(s) {
+function update(s, new_file = false) {
 	// var code = "\n" + document.getElementById("code").value ;
-
+	if(new_file)
+	{
+		imgsrc = s
+	}
+	else {
+		imgsrc = "../media/bg/"+s+".jpg"
+	}
+  xhrimg = new XMLHttpRequest()
+	xhrimg.open("GET","https://localhost:5000/imgPath?n=" + imgsrc)
+	xhrimg.send()
 	console.log("in update")
-	var img = s;
-	var code = "<a-sky src='../media/bg/"+img+".jpg' rotation='0 -130 0'></a-sky>";
+	var code = "<a-camera universal-controls position='0 1.6 0'><a-cursor></a-cursor></a-camera><a-sky src='"+imgsrc+"' rotation='0 -130 0'></a-sky>";
 	var bodyElem = document.getElementById("main-body");
 	bodyElem.removeChild(bodyElem.lastChild);
 
