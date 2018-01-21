@@ -119,7 +119,7 @@ def process(cmd,coord,pathVar):
 
 	header = '<canvas class="a-canvas" data-aframe-canvas="true" width="300" height="150"></canvas><a-camera universal-controls wasd-controls><a-cursor></a-cursor></a-camera>'
 	footer = '<a-sky src = "' + pathVar + '" ></a-sky>'
-	print(string)
+	#print(string)
 	body = header + string + footer
 	#print(body)
 	return body
@@ -127,4 +127,4 @@ def process(cmd,coord,pathVar):
 
 #process("Insert sphere one color red radius 5",[1,1,1],"1.jpg")
 #process("Insert cylinder one color red radius 5 height 3",[1,1,1],"1.jpg")
-process("Update sphere one radius 2",[1,1,1],"1.jpg")
+#process("Update sphere one radius 2",[1,1,1],"1.jpg")

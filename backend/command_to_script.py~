@@ -116,6 +116,7 @@ def process(cmd,coord,pathVar):
 		#print(keys)
 	#print(string)
 
+
 	header = '<canvas class="a-canvas" data-aframe-canvas="true" width="300" height="150"></canvas><a-camera universal-controls wasd-controls><a-cursor></a-cursor></a-camera>'
 	footer = '<a-sky src = "' + pathVar + '" ></a-sky>'
 	print(string)
