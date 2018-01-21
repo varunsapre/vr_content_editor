@@ -1,5 +1,5 @@
 import pickle
-import glob
+import glob,random
 from cmd_token import *
 
 def process(cmd,coord,pathVar):
@@ -22,7 +22,7 @@ def process(cmd,coord,pathVar):
 			cr = 'color = "black"'
 			if dicto[shape]["color"] != None:
 				cr = ' color = "' + dicto[shape]["color"] + '" '
-			liner = '<a-box position="'+' '.join(map(str,coord))+'" rotation="0 45 0"'+ cr +'shadow="" click-drag></a-box>'
+			liner = '<a-box position="'+' '.join(map(str,[random.randint(0,5),random.randint(0,5),random.randint(0,5)]))+'" rotation="0 45 0"'+ cr +'shadow="" click-drag></a-box>'
 			#print(liner)
 
 		if "sphere" in shape:
@@ -32,7 +32,7 @@ def process(cmd,coord,pathVar):
 				cr = ' color = "' + dicto[shape]["color"] + '" '
 			if dicto[shape]["radius"] != None:
 				r = ' radius = "' + dicto[shape]["radius"] + '" '
-			liner = '<a-sphere position="'+' '.join(map(str,coord))+'"' + cr + r + 'shadow="" click-drag></a-sphere>'
+			liner = '<a-sphere position="'+' '.join(map(str,[random.randint(0,5),random.randint(0,5),random.randint(0,5)]))+'"' + cr + r + 'shadow="" click-drag></a-sphere>'
 			#print(liner)
 
 		if "cylinder" in shape:
@@ -45,7 +45,7 @@ def process(cmd,coord,pathVar):
 				r = ' radius = "' + dicto[shape]["radius"] + '" '
 			if dicto[shape]["height"] != None:
 				h = ' height = "' + dicto[shape]["height"] + '" '
-			liner = '<a-cylinder position="'+' '.join(map(str,coord))+'"' + cr+r+h +'shadow="" click-drag></a-cylinder>'
+			liner = '<a-cylinder position="'+' '.join(map(str,[random.randint(0,5),random.randint(0,5),random.randint(0,5)]))+'"' + cr+r+h +'shadow="" click-drag></a-cylinder>'
 			#print(liner)
 		store[shape] = liner
 
@@ -69,7 +69,7 @@ def process(cmd,coord,pathVar):
 			cr = 'color = ' + tok[tok.index('color')+2] + ''
 			if dicto[shape]["color"] != None:
 				cr = ' color = "' + dicto[shape]["color"] + '" '
-			liner = '<a-box position="'+' '.join(map(str,coord))+'" rotation="0 45 0"'+ cr +'shadow="" click-drag ></a-box>'
+			liner = '<a-box rotation="0 45 0"'+ cr +'shadow="" click-drag ></a-box>'
 			#print(liner)
 
 		if "sphere" in shape:
@@ -79,7 +79,7 @@ def process(cmd,coord,pathVar):
 				cr = ' color = "' + dicto[shape]["color"] + '" '
 			if dicto[shape]["radius"] != None:
 				r = ' radius = "' + dicto[shape]["radius"] + '" '
-			liner = '<a-sphere position="'+' '.join(map(str,coord))+'"' + cr + r + 'shadow="" click-drag></a-sphere>'
+			liner = '<a-sphere '+ cr + r + ' click-drag></a-sphere>'
 			#print(liner)
 
 		if "cylinder" in shape:
@@ -92,7 +92,7 @@ def process(cmd,coord,pathVar):
 				r = ' radius = "' + dicto[shape]["radius"] + '" '
 			if dicto[shape]["height"] != None:
 				h = ' height = "' + dicto[shape]["height"] + '" '
-			liner = '<a-cylinder position="'+' '.join(map(str,coord))+'"' + cr+r+h +'shadow="" click-drag></a-cylinder>'
+			liner = '<a-cylinder ' + cr+r+h +'shadow="" click-drag></a-cylinder>'
 			#print(liner)
 		store[shape] = liner
 		#print(store)
